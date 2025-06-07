@@ -1,0 +1,13 @@
+name = "zdas-worker"  # 你可以自定义名字
+type = "javascript"   # Worker 类型，支持 JavaScript 和 WASM，默认是 JavaScript
+
+[env.production]
+account_id = "你的 Cloudflare 帐号 ID"  # 你的 Cloudflare 账户 ID
+workers_dev = true   # 设置为 true 使用 Workers Dev 环境
+route = "your-domain.com/*"  # 如果你有域名，替换为你的路由路径
+zone_id = "你的 Cloudflare zone ID"  # Cloudflare 区域 ID
+
+[[kv_namespaces]]  # 如果你使用 KV 存储，配置你的 KV 存储命名空间
+binding = "MY_NAMESPACE"   # KV 存储绑定的名称
+id = "kv-namespace-id"     # 你创建的 KV 存储的 ID
+
